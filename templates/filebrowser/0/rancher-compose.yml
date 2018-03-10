@@ -1,0 +1,25 @@
+.catalog:
+  name: File Browser
+  version: '0.1'
+  description: File Browser
+  minimum_rancher_version: v1.5.0
+  questions:
+    - variable: FILEBROWSER_VERSION
+      label: File Browser version from https://hub.docker.com/r/hacdias/filemanager/tags/
+      required: true
+      type: string
+      default: latest
+    - variable: VOLUME_DRIVER
+      label: Volume Driver
+      type: string
+      default: rancher-nfs
+      required: true
+    - variable: VOLUME_STORAGE
+      label: Data Volume
+      type: string
+      required: true
+    - variable: BASE_URL
+      label: Base url
+      description: /_files or other prefix to use
+      type: string
+      required: false

@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  filebrowser:
+    image: hacdias/filebrowser:${FILEBROWSER_VERSION}
+    command: --baseurl ${BASE_URL} --port 80 --scope /storage
+
+    volumes:
+      - ${VOLUME_STORAGE}:/storage
+
+volumes:
+  {{ .Values.VOLUME_STORAGE }}:
+    driver: ${VOLUME_DRIVER}
+    external: true
